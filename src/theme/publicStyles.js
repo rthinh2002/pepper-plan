@@ -4,7 +4,7 @@ const backgroundStyle = {
 }
 
 const centerElementStyle = {
-    my: 12, 
+    my: 16, 
     mx: 4, 
     display: 'flex', 
     flexDirection: 'column', 
@@ -72,6 +72,22 @@ const buttonStyle = {
     } 
 }
 
+const whiteButtonStyle = {
+    ...MontserratBodyStyle, 
+    mt: 2,
+    mb: 2, 
+    backgroundColor: 'white', 
+    color: 'black',
+    fontWeight: 'bold',
+    borderRadius: 5,
+    boxShadow: 3,
+    '&:hover': {
+        backgroundColor: '#FF8841', 
+        color: 'black',
+        fontWeight: 'bold',
+    } 
+}
+
 const linkStyle = {
     mt: 1, 
     color: 'black', 
@@ -94,5 +110,6 @@ export {
     textFieldfocusStyle,
     centeringStyle,
     buttonStyle,
-    linkStyle
+    linkStyle,
+    whiteButtonStyle
 };

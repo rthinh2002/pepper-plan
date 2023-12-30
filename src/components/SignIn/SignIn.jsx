@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Typography, Box, Divider, Link, Button, TextField } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Logo from '../Logo/Logo';
 import { 
   backgroundStyle, 
@@ -12,8 +13,20 @@ import {
   textFieldfocusStyle,
   centeringStyle,
   buttonStyle,
-  linkStyle
+  linkStyle,
+  whiteButtonStyle
 } from '../../theme/publicStyles';
+import Lottie from 'lottie-react';
+import animationData from '../../animations/circle_animation2.json';
+
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 1120, 
+    },
+  },
+});
 
 const socialNetworkIconList = [
   { id: 'Facebook', url: 'https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg' },
@@ -23,8 +36,9 @@ const socialNetworkIconList = [
 
 const SignIn = () => {
   return (
-    <Grid container component="main" sx={backgroundStyle}>
-      <Grid item xs={12} sm={4} md={7} sx={{ backgroundColor: 'white', height: '100%' }}>
+    <ThemeProvider theme={theme}>
+    <Grid container component="main" sx={{...backgroundStyle, zIndex: -1}}>
+      <Grid item xs={12} sm={7} md={10} sx={{ backgroundColor: 'white', height: '100%' }}>
         <Logo />
         {/* Login elements */}
         <Box sx={centerElementStyle}>
@@ -104,9 +118,33 @@ const SignIn = () => {
         </Box>
       </Grid>
 
-      <Grid item xs={false} sm={8} md={5} sx={{  }}></Grid>
+      <Grid item xs={2} sm={5} md={12} sx={{ height: '100%' }}>
+        <Box sx={{...centerElementStyle, my: 27}  }>
+          <Box sx={{width: '50%', textAlign: 'center'}}>
+            <Typography sx={{...MontserratHeaderStyle, color: 'white'}}>New Here</Typography>
+            <Typography sx={{...MontserratBodyStyle, color: 'white', fontSize: 30, my: 2}}>Sign up to figure how PepperPlan can help you manage your financial!</Typography>
+          </Box>
+          <Box sx={{...centeringStyle, zIndex: 1}}>
+              <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{ 
+                    ...whiteButtonStyle, 
+                    width: 200, 
+                  }}
+              >
+                  Sign Up
+              </Button>
+          </Box>
+          <Box sx={{...centeringStyle, my: -70, zIndex: 0}}>
+            <Lottie animationData={animationData} style={{ width: 800, height: 800 }} />
+          </Box>
+          
+        </Box>
+      </Grid>
     </Grid>
-
+  </ThemeProvider>
   )
 }
 
