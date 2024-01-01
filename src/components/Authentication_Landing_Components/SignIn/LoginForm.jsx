@@ -4,7 +4,6 @@ import { Box, Typography, Divider, Link, Button, TextField } from '@mui/material
 import { 
 centerElementStyle, 
 MontserratBodyStyle, 
-MontserratHeaderStyle, 
 socialIconContainer, 
 socialIconStyle, 
 textFieldFormStyle, 
@@ -13,14 +12,9 @@ centeringStyle,
 buttonStyle, 
 linkStyle 
 } from '../../../theme/publicStyles';
+import { socialNetworkIconList } from '../../../theme/socialIcon';
 
-const socialNetworkIconList = [
-    { id: 'Facebook', url: 'https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg' },
-    { id: 'Google', url: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg' },
-    { id: 'LinkedIn', url: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/LinkedIn_PNG16.png' },
-];
-
-const Login = () => {
+const LoginForm = () => {
     const navigate = useNavigate();
 
     const handleSignIn = (e) => {
@@ -30,8 +24,8 @@ const Login = () => {
 
   return (
     <Box sx={centerElementStyle}>
-        <Typography sx={MontserratHeaderStyle}>Login to Your Account</Typography>
-        <Typography sx={MontserratBodyStyle}>Login using social network</Typography>
+        <Typography variant='h1'>Login to Your Account</Typography>
+        <Typography variant='h4'>Login using social network</Typography>
         {/* Social Logo wrapper */}
         <Box component='div' sx={socialIconContainer}>
             {socialNetworkIconList.map((icon) => (
@@ -107,4 +101,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default LoginForm;

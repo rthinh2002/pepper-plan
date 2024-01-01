@@ -6,6 +6,18 @@ const centerElementStyle = {
     alignItems: 'center'
 }
 
+const bodyStyle = {
+    height: '100vh', 
+    display: 'flex', 
+    justifyContent: 'center', 
+    alignItems: 'center'
+}
+
+const backgroundStyle = {
+    height: '100vh',
+    backgroundColor: '#073138',
+}
+
 const MontserratHeaderStyle = {
     fontFamily: 'Montserrat', 
     fontSize: 40, 
@@ -106,5 +118,7 @@ export {
     centeringStyle,
     buttonStyle,
     linkStyle,
-    whiteButtonStyle
+    whiteButtonStyle,
+    bodyStyle,
+    backgroundStyle
 };

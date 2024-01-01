@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Logo from '../../Layout_Components/Logo/Logo';
 import { centeringStyle } from '../../../theme/publicStyles';
 import { motion } from 'framer-motion';
-import Login from './Login';
+import LoginForm from './LoginForm';
 import SignUpGreeting from './SignUpGreeting';
 
 const theme = createTheme({
@@ -14,6 +14,18 @@ const theme = createTheme({
       sm: 1120, 
     },
   },
+  typography: {
+    fontFamily: 'Montserrat',
+    h1: {
+        fontWeight: 'bold',
+        fontSize: 40,
+        marginBottom: 10,
+    },
+    h4: {
+        fontSize: 20,
+        marginBottom: 10,
+    }
+  }
 });
 
 const SignIn = () => {
@@ -36,7 +48,7 @@ const SignIn = () => {
               }
             }}
           >
-            <Logo />
+            <Logo color={'color'}/>
           </motion.div>
           
           {/* Login elements */}
@@ -45,7 +57,7 @@ const SignIn = () => {
             animate={{ opacity: 1, }}
             transition={{ duration: 2, ease: 'easeOut' }}
           >
-            <Login />
+            <LoginForm />
           </motion.div>
         </Grid>
         

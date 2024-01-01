@@ -5,16 +5,14 @@ import Lottie from 'lottie-react';
 import {
     centeringStyle,
     whiteButtonStyle,
-    MontserratHeaderStyle,
-    MontserratBodyStyle,
 } from '../../../theme/publicStyles';
 
 const SignUpGreeting = () => {
   return (
     <Box sx={{width: '40%'}}>
         <Box>
-            <Typography sx={{...MontserratHeaderStyle, color: 'white'}}>New Here?</Typography>
-            <Typography sx={{...MontserratBodyStyle, color: 'white', fontSize: 30, my: 2}}>Sign up to figure out how PepperPlan can help you manage your finance!</Typography>
+            <Typography variant='h1' sx={{color: 'white'}}>New Here?</Typography>
+            <Typography variant='h4' sx={{color: 'white', fontSize: 30, my: 2}}>Sign up to figure out how PepperPlan can help you manage your finance!</Typography>
         </Box>
         <Box sx={{...centeringStyle, zIndex: 2  }}>
             <Button
