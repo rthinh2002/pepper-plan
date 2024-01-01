@@ -1,8 +1,3 @@
-const backgroundStyle = {
-    height: '100vh',
-    backgroundColor: '#073138',
-}
-
 const centerElementStyle = {
     my: 16, 
     mx: 4, 
@@ -51,9 +46,10 @@ const textFieldfocusStyle = {
 }
 
 const centeringStyle = {
-    display: 'flex', 
+    display: 'flex',
+    alignItems: 'center',
+    textAlign: 'center',
     justifyContent: 'center', 
-    alignItems: 'center'
 }
 
 const buttonStyle = {
@@ -100,7 +96,6 @@ const linkStyle = {
 }
 
 export {
-    backgroundStyle, 
     centerElementStyle, 
     MontserratBodyStyle, 
     MontserratHeaderStyle, 

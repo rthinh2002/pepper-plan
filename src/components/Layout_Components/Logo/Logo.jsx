@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Typography, Box } from '@mui/material';
-import logo from '../../images/pepper_plan.png';
+import logo from '../../../images/pepper_plan.png';
 
 const Logo = () => {
   return (
