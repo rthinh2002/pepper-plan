@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Grid } from '@mui/material';
-import { backgroundStyle } from '../../../theme/publicStyles';
 import { motion } from 'framer-motion';
 
 const SignUp = () => {
