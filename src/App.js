@@ -1,14 +1,11 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { SignIn, SignUp } from './components';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AnimatedRoutes from './components/Route/AnimatedRoutes';
 
 function App() {
   return (
     <Router>
-        <Routes>
-          <Route path="/" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-        </Routes>
+      <AnimatedRoutes />  
     </Router>
   );
 }

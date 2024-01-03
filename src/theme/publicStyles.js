@@ -57,6 +57,18 @@ const textFieldfocusStyle = {
     }
 }
 
+const textFieldfocusStyleForGreenBackground = {
+    "& label.Mui-focused": {
+      color: "#073138"
+    },
+    "& .MuiOutlinedInput-root": {
+      "&.Mui-focused fieldset": {
+        borderColor: "#073138",
+      },
+      backgroundColor: '#C5C5C5',
+    }
+} 
+
 const centeringStyle = {
     display: 'flex',
     alignItems: 'center',
@@ -120,5 +132,6 @@ export {
     linkStyle,
     whiteButtonStyle,
     bodyStyle,
-    backgroundStyle
+    backgroundStyle,
+    textFieldfocusStyleForGreenBackground
 };

@@ -66,7 +66,6 @@ const SignIn = () => {
           <motion.div
             initial={{ opacity: 0, x: '100vw' }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ x: `${window.innerWidth}`, transition: { duration: 5 } }}
             transition={{ duration: 2.5, ease: 'easeOut' }}
             style={{
               ...centeringStyle, 
@@ -78,7 +77,6 @@ const SignIn = () => {
             <SignUpGreeting />
           </motion.div>
         </Grid>
-
       </Grid>
     </ThemeProvider>
   )

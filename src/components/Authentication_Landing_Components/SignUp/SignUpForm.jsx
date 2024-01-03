@@ -8,10 +8,10 @@ MontserratBodyStyle,
 socialIconContainer,
 socialIconStyle,
 textFieldFormStyle,
-textFieldfocusStyle,
 centeringStyle,
 whiteButtonStyle,
-linkStyle
+linkStyle,
+textFieldfocusStyleForGreenBackground
 } from '../../../theme/publicStyles';
 import { socialNetworkIconList } from '../../../theme/socialIcon';
 
@@ -75,9 +75,12 @@ const SignUpForm = () => {
                         name="email"
                         autoComplete="email"
                         autoFocus
-                        sx={textFieldfocusStyle}
+                        sx={textFieldfocusStyleForGreenBackground}
                         InputProps={{
                             sx: textFieldFormStyle
+                        }}
+                        InputLabelProps={{
+                            shrink: false,
                         }}
                     />
                     <TextField
@@ -89,9 +92,12 @@ const SignUpForm = () => {
                         type="password"
                         id="password"
                         autoComplete="current-password"
-                        sx={textFieldfocusStyle}
+                        sx={textFieldfocusStyleForGreenBackground}
                         InputProps={{
                             sx: textFieldFormStyle
+                        }}
+                        InputLabelProps={{
+                            shrink: false,
                         }}
                     />
                     <Box sx={centeringStyle}>
