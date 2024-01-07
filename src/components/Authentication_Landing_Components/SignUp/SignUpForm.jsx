@@ -119,7 +119,7 @@ const SignUpForm = () => {
                             width: 200, 
                             }}
                         >
-                            Sign In
+                            Sign Up
                         </Button>
                     </Box>
                 </Box>

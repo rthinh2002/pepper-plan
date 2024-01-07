@@ -13,13 +13,21 @@ buttonStyle,
 linkStyle 
 } from '../../../theme/publicStyles';
 import { socialNetworkIconList } from '../../../theme/socialIcon';
+import AuthService from '../../../services/authService';
 
 const LoginForm = () => {
     const navigate = useNavigate();
+    const authService = new AuthService();
 
     const handleSignIn = (e) => {
       e.preventDefault();
-      navigate('/signup');
+      const data = new FormData(e.currentTarget);
+      try {
+        authService.login(data.get('email'), data.get('password'));
+        navigate('/dashboard');
+      } catch (error) {
+        console.log(error);
+      }
     }
 
   return (

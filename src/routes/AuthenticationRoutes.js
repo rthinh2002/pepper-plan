@@ -1,10 +1,10 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { SignIn, SignUp } from '../index';
+import { SignIn, SignUp } from '../components/index'
 
 import {AnimatePresence} from 'framer-motion'
 
-function AnimatedRoutes() {
+function AuthenticationRoutes() {
     const location = useLocation();
     return (
         <AnimatePresence>
@@ -16,4 +16,4 @@ function AnimatedRoutes() {
     )
 }
 
-export default AnimatedRoutes
+export default AuthenticationRoutes

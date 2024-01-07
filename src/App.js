@@ -1,11 +1,13 @@
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
-import AnimatedRoutes from './components/Route/AnimatedRoutes';
+import AuthenticationRoutes from './routes/AuthenticationRoutes';
+import ContentRoutes from './routes/ContentRoutes';
 
 function App() {
   return (
     <Router>
-      <AnimatedRoutes />  
+      <AuthenticationRoutes />  
+      <ContentRoutes />
     </Router>
   );
 }
