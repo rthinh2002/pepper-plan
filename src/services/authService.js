@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase/firebase';
 
 export default class AuthService {
@@ -9,7 +9,18 @@ export default class AuthService {
     await signInWithEmailAndPassword(auth, email, password);
   }
 
-  async logout() {
-    // return await firebase.auth().signOut();
+  // Check if user state changed
+  onAuthChange(callback) {
+    return onAuthStateChanged(auth, callback);
+  }
+
+  // Get current user
+  getUser() {
+    return auth.currentUser;
+  }
+
+  // Log out
+  logout() {
+    auth.signOut();
   }
 }
