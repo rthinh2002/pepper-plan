@@ -1,11 +1,15 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 // Routes and services import
 import AuthenticationRoutes from './routes/AuthenticationRoutes';
 import ContentRoutes from './routes/ContentRoutes';
 import AuthService from './services/authService';
+
+import { useAuth } from './hooks/useAuth';
+import { useRouteCheck } from './hooks/useRouteCheck';
+import { useLogoutOnRoutes } from './hooks/useLogoutOnRoutes';
 
 // Components import
 import { 
@@ -15,24 +19,11 @@ import {
 } from './components';
 
 function App() {
-  const authService = new AuthService();
-  const [isLogged, setIsLogged] = useState(false);
-  const [isInAuthenticationRoute, setIsInAuthenticationRoute] = useState(true);
   const location = useLocation();
-
-  useEffect(() => {
-    authService.onAuthChange((user) => {
-      if(user) {
-        setIsLogged(true);
-      } else {
-        setIsLogged(false);
-      }
-    });
-  });
-
-  useEffect(() => {
-    setIsInAuthenticationRoute(location.pathname === '/signup' || location.pathname === '/');
-  }, [location.pathname]);
+  const authService = new AuthService();
+  const isLogged = useAuth(authService);
+  const isInAuthenticationRoute = useRouteCheck(location);
+  useLogoutOnRoutes(authService, location);
 
   return (
     <>

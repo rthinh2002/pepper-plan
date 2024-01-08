@@ -3,6 +3,7 @@ const dashboardTwoColumnStyle = {
     backgroundColor: 'white',
     borderRadius: 10,
     boxShadow: 3,
+    pt: 5
 }
 
 const dashboardThreeColumnStyle = {
