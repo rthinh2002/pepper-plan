@@ -1,17 +1,24 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
+// Routes and services import
 import AuthenticationRoutes from './routes/AuthenticationRoutes';
 import ContentRoutes from './routes/ContentRoutes';
-import NavBar from './components/Content/Settings/NavBar/NavBar';
-import Loader from './components/Content/Settings/Loader/Loader';
 import AuthService from './services/authService';
+
+// Components import
+import { 
+  NavBar, 
+  Loader, 
+  Footer 
+} from './components';
 
 function App() {
   const authService = new AuthService();
   const [isLogged, setIsLogged] = useState(false);
   const [isInAuthenticationRoute, setIsInAuthenticationRoute] = useState(true);
-  const [urlLocation] = useState(window.location.pathname);
+  const location = useLocation();
 
   useEffect(() => {
     authService.onAuthChange((user) => {
@@ -24,19 +31,16 @@ function App() {
   });
 
   useEffect(() => {
-    if(urlLocation === '/signup' || urlLocation === '/') {
-      setIsInAuthenticationRoute(true);
-    } else {
-      setIsInAuthenticationRoute(false);
-    }
-  }, [urlLocation]);
+    setIsInAuthenticationRoute(location.pathname === '/signup' || location.pathname === '/');
+  }, [location.pathname]);
 
   return (
-    <Router>
+    <>
       {isLogged && <NavBar /> }
       <AuthenticationRoutes />
       {(!isLogged && !isInAuthenticationRoute) ? <Loader /> : (<ContentRoutes />)}  
-    </Router>
+      {isLogged && <Footer /> }
+    </>
   );
 }
 
