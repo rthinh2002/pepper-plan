@@ -1,19 +1,25 @@
 import React from 'react';
-import { Grid, Box, Card } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 import {
   dashboardThreeColumnStyle,
   dashboardTwoColumnStyle,
 } from './DashBoardComponentStyle';
 
-import PieChart from './PieChart';
+import PieChart from './VisualDisplay/PieChart';
+import StackBarChart from './VisualDisplay/StackBarChart';
 
 const DashBoard = () => {
   return (
     <>
       <Grid container spacing={2} sx={{p: 4}}>
         <Grid item xs={7}>
-          <Box sx={dashboardTwoColumnStyle}>
-              <PieChart width={520} height={300}/>
+          <Box sx={{...dashboardTwoColumnStyle, display: 'flex'}}>
+            <div style={{marginTop: 30, width: 500}}>
+                <PieChart width={520} height={300}/>
+            </div>
+            <div style={{marginTop: 30, width: 500}}>
+                <StackBarChart />
+            </div>
           </Box>
         </Grid>
 
