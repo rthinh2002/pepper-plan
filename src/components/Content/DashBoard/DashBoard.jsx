@@ -7,6 +7,7 @@ import {
 
 import PieChart from './VisualDisplay/PieChart';
 import StackBarChart from './VisualDisplay/StackBarChart';
+import News from './News/News';
 
 const DashBoard = () => {
   return (
@@ -24,7 +25,9 @@ const DashBoard = () => {
         </Grid>
 
         <Grid item xs={5}>
-          <Box sx={dashboardTwoColumnStyle} />
+          <Box sx={{backgroundColor: 'white',borderRadius: 10, boxShadow: 3,display: 'flex', height: '100%'}}>
+            <News />
+          </Box>
         </Grid>
       </Grid>
 

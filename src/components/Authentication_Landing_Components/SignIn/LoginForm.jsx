@@ -2,15 +2,15 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Typography, Divider, Link, Button, TextField } from '@mui/material';
 import { 
-centerElementStyle, 
-MontserratBodyStyle, 
-socialIconContainer, 
-socialIconStyle, 
-textFieldFormStyle, 
-textFieldfocusStyle, 
-centeringStyle, 
-buttonStyle, 
-linkStyle 
+    centerElementStyle, 
+    MontserratBodyStyle, 
+    socialIconContainer, 
+    socialIconStyle, 
+    textFieldFormStyle, 
+    textFieldfocusStyle, 
+    centeringStyle, 
+    buttonStyle, 
+    linkStyle 
 } from '../../../theme/publicStyles';
 import { socialNetworkIconList } from '../../../theme/socialIcon';
 import AuthService from '../../../services/authService';
