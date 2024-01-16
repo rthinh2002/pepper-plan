@@ -26,7 +26,7 @@ const TypographyBoxWrapperStyled = styled(Box)({
 
 const StyledIconButton = styled(IconButton)({
     position: 'absolute',
-    top: '45%',
+    top: '50%',
     transform: 'translateY(-50%)',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     '&:hover': {
