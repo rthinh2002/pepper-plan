@@ -257,3 +257,34 @@ export const upcomingBills = [
       status: 'Due'
     }
 ];
+
+export const monthlyIncome = [
+    {
+      name: 'Credit',
+      data: Array.from({ length: 30 }, (_, i) => 
+        Math.floor(Math.random() * (100000 - 50000 + 1)) + 10000 // Random balance between 3000 and 5000
+      )
+    },
+    {
+      name: 'Savings',
+      data: Array.from({ length: 30 }, (_, i) => 
+        Math.floor(Math.random() * (20000 - 15000 + 1)) + 15000 // Random balance between 15000 and 20000
+      )
+    },
+    {
+      name: 'Investment',
+      data: Array.from({ length: 30 }, (_, i) => 
+        Math.floor(Math.random() * (100000 - 80000 + 1)) + 80000 // Random balance between 80000 and 100000
+      )
+    }
+];
+
+export const goal = [
+    {
+      name: 'Credit',
+      data: Array.from({ length: 30 }, (_, i) => 
+        Math.floor(Math.random() * (100000 - 50000 + 1)) + 10000 // Random balance between 3000 and 5000
+      )
+    },
+];
+  

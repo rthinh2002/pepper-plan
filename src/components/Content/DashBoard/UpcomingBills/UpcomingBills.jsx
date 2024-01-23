@@ -28,7 +28,7 @@ const UpcomingBills = () => {
       <Table sx={{ minWidth: 300, height: '100%', }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Name</StyledTableCell>
+            <StyledTableCell>Upcoming Bill Name</StyledTableCell>
             <StyledTableCell align="right">Amount</StyledTableCell>
             <StyledTableCell align="right">Due Date</StyledTableCell>
             <StyledTableCell align="right">Status</StyledTableCell>

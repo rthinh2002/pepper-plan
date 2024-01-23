@@ -1,4 +1,5 @@
 const dashboardTwoColumnStyle = {
+    display: 'flex',
     height: 500,
     backgroundColor: 'white',
     borderRadius: 10,
@@ -7,8 +8,6 @@ const dashboardTwoColumnStyle = {
 }
 
 const dashboardThreeColumnStyle = {
-    zIndex: 1,
-    mt: 3,
     height: 400,
     backgroundColor: 'white',
     borderRadius: 10,
