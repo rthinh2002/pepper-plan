@@ -218,3 +218,42 @@ export const newsData = {
         }
     ]
 }
+
+export const upcomingBills = [
+    {
+      name: 'Electricity',
+      amount: 160,
+      dueDate: '2024-02-15',
+      status: 'Due'
+    },
+    {
+      name: 'Water',
+      amount: 80,
+      dueDate: '2024-02-20',
+      status: 'Due'
+    },
+    {
+      name: 'Internet',
+      amount: 60,
+      dueDate: '2024-02-25',
+      status: 'Due'
+    },
+    {
+      name: 'Mobile Phone',
+      amount: 50,
+      dueDate: '2024-02-28',
+      status: 'Due'
+    },
+    {
+      name: 'Streaming Services',
+      amount: 40,
+      dueDate: '2024-02-10',
+      status: 'Paid'
+    },
+    {
+      name: 'Rent',
+      amount: 1500,
+      dueDate: '2024-03-01',
+      status: 'Due'
+    }
+];

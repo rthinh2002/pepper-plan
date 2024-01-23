@@ -8,6 +8,7 @@ import {
 import PieChart from './VisualDisplay/PieChart';
 import StackBarChart from './VisualDisplay/StackBarChart';
 import News from './News/News';
+import UpcomingBills from './UpcomingBills/UpcomingBills';
 
 const DashBoard = () => {
   return (
@@ -33,7 +34,10 @@ const DashBoard = () => {
 
       <Grid container spacing={2} sx={{p: 4, mt: -8}}>
         <Grid item xs={4}>
-          <Box sx={dashboardThreeColumnStyle} />
+          {/* Display upcoming bills */}
+          <Box sx={dashboardThreeColumnStyle}>
+            <UpcomingBills />
+          </Box>
         </Grid>
 
         <Grid item xs={4}>
