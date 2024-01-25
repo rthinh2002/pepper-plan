@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { signInWithEmailAndPassword, onAuthStateChanged, createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase/firebase';
 
 export default class AuthService {
@@ -12,6 +12,13 @@ export default class AuthService {
   // Check if user state changed
   onAuthChange(callback) {
     return onAuthStateChanged(auth, callback);
+  }
+
+  async signUp(email, password) {
+    if(!email || !password) throw new Error('Missing email or password');
+    if(typeof email !== 'string' || typeof password !== 'string') throw new Error('Email and password must be strings');
+    if(email.includes('@') === false) throw new Error('Email must be a valid email address');
+    await createUserWithEmailAndPassword(auth, email, password);
   }
 
   // Get current user

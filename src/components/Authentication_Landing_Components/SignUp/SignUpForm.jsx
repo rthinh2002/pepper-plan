@@ -14,6 +14,7 @@ linkStyle,
 textFieldfocusStyleForGreenBackground
 } from '../../../theme/publicStyles';
 import { socialNetworkIconList } from '../../../theme/socialIcon';
+import AuthService from '../../../services/authService';
 
 const theme = createTheme({
     typography: {
@@ -34,10 +35,18 @@ const theme = createTheme({
 
 const SignUpForm = () => {
     const navigate = useNavigate();
+    const authService = new AuthService();
 
-    const handleSignIn = (e) => {
+    const handleSignUp = (e) => {
       e.preventDefault();
-      navigate('/signup');
+      const data = new FormData(e.currentTarget);
+      try {
+        authService.signUp(data.get('email'), data.get('password'));
+        authService.logout();
+        navigate('/');
+      } catch (error) {
+        alert(error);
+      }
     }
 
     return (
@@ -65,13 +74,13 @@ const SignUpForm = () => {
                 </Divider>
 
                 {/* Login Form */}
-                <Box component="form" onSubmit={handleSignIn} noValidate sx={{ mt: 1, justifyContent: 'center', alignItems: 'center' }} >
+                <Box component="form" onSubmit={handleSignUp} noValidate sx={{ mt: 1, justifyContent: 'center', alignItems: 'center' }} >
                     <TextField
                         margin="normal"
                         required
                         fullWidth
                         id="email"
-                        label="Email Address"
+                        placeholder="Email Address"
                         name="email"
                         autoComplete="email"
                         autoFocus
@@ -88,7 +97,7 @@ const SignUpForm = () => {
                         required
                         fullWidth
                         name="password"
-                        label="Password"
+                        placeholder="Password"
                         type="password"
                         id="password"
                         autoComplete="current-password"
